@@ -1,4 +1,6 @@
-
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,13 +25,13 @@
 
 <div class="ui middle aligned center aligned grid">
   <div class="column">
-    <h2 class="ui grey inverted image header">
+    <h2 class="ui  inverted image header">
       <img src="img/pitbull.svg" class="image">
       <div class="content">
         Cachorros Industria LLC
       </div>
     </h2>
-    <form class="ui large form">
+    <form class="ui large form" method="post" id="formulario_login" action="php/checklogin.php">
       <div class="ui stacked segment">
         <div class="field">
           <div class="ui left icon input">
@@ -43,7 +45,7 @@
             <input type="password" name="password" placeholder="Contraseña">
           </div>
         </div>
-        <a href="php/index.php"><div class="ui fluid large teal submit button">Iniciar sesión</div></a>
+        <input type="submit" class="ui fluid large teal submit button" value="Iniciar sesión">
       </div>
 
       <div class="ui error message"></div>
