@@ -45,7 +45,7 @@
               echo    '<td>'.$renglon["nombre_usuario"].'</td>';
               echo    '<td>'.$renglon["correo"].'</td>';
               echo    '<td>'.$renglon["tipo"].'</td>';
-              echo    '<td class="center aligned"><a class="ui blue button" href="editar_usuario.php?id='.$renglon["id_usuario"].'">Editar</a></td>';
+              echo    '<td class="center aligned"><a class="ui blue button" href="editar_usuario.php?id='.$renglon["id_usuario"].'&nombre='.$renglon["nombre_usuario"].'&correo='.$renglon["correo"].'&tipo='.$renglon["tipo"].'">Editar</a></td>';
               echo    '<td class="center aligned"><a class="ui red button" href="#">Eliminar</a></td>';
               echo  '</tr>';
             }

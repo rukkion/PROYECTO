@@ -12,7 +12,7 @@
 
 
 <hr>
-<form class="ui fluid form" action="post" autocomplete="off">
+<form class="ui fluid form" method="post" action="editar_usuario-manejo.php" autocomplete="off">
     <div class="ui two column grid">
         <div class="four wide column">
             <div class="ui center aligned segment">
@@ -28,10 +28,13 @@
         <div class="thisteen wide column">
             <div class="field">
                 <h3>Nombre usuario </h3>
-                <input type="text" name="usuario" id="usuario" >
+                <?php
+                    echo '<input type="text" name="usuario" id="usuario" value="'.$_GET["nombre"].'">';
+                ?>
+                
             </div>
             <div class="field">
-                <h3>Contraseña </h3>
+                <h3>Nueva contraseña </h3>
                 <input type="password" name="password" id="password">
             </div>
             <div class="field">
@@ -42,13 +45,23 @@
                 <h3>Tipo de usuario </h3>
                 <select class="ui dropdown">
                     <option value="">Seleccionar</option>
-                    <option value="1">Usuario</option>
-                    <option value="0">Administrador</option>
+                    <?php
+                        if($_GET["tipo"]==="Administrador"){
+                            echo '<option value="1">Usuario</option>';
+                            echo '<option value="0" selected>Administrador</option>';
+                        }elseif($_GET["tipo"]==="Usuario"){
+                            echo '<option value="1" selected>Usuario</option>';
+                            echo '<option value="0">Administrador</option>';
+                        }
+                    ?>
+
                 </select>
             </div>
             <div class="field">
                 <h3>Correo electrónico</h3>
-                <input type="email" name="correo" id="correo">
+                <?php
+                    echo '<input type="email" name="correo" id="correo" value="'.$_GET["correo"].'">';
+                ?>
             </div>
             <div class="field ">
                 
@@ -56,7 +69,7 @@
                     Cancelar
                   </button>
                   <button class="ui teal  button" type="submit">
-                    Crear nuevo usuario
+                    Guardar
                   </button>
             </div>
         </div>
