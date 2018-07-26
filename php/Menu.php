@@ -1,4 +1,6 @@
-
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -38,8 +40,10 @@
   <div class="item" >
       <i class="circular inverted teal users icon"></i>
     <div class="content">
-      <div class="ui sub header">John Doe</div>
-      usuario
+      <?php 
+        echo '<div class="ui sub header">'.$_SESSION["nombre_usuario"].'</div>';
+      ?>
+      <?php echo $_SESSION['tipo'];?>
     </div>
   </div>
 </div>

@@ -43,6 +43,13 @@
                     </div>
                 </div>
                 
+                <div class="field">
+                    <label>Cantidad</label>
+                    <div class="ui right labeled input">
+                      <input type="text" placeholder="0" id="cantidad">
+                      <div class="ui label">Pz</div>
+                    </div>
+                </div>
                
                 <div class="field">
                     <Label>Estado</Label>
@@ -73,7 +80,7 @@
                         Cancelar
                       </button>
                       <button class="ui primary button" type="submit">
-                        Crear nuevo usuario
+                        Crear nuevo articulo
                       </button>
                 </div>
             </div>

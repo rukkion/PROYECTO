@@ -5,7 +5,7 @@
         <div>
           <h1>
               <i class=" teal large boxes icon "></i>
-            &nbsp;Piezas 
+            &nbsp;Articulos 
           </h1>
         </div>
  <div class="ui menu ">
