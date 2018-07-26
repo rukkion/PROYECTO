@@ -2,13 +2,33 @@
     include("Menu.php");
 ?>
 
+<!--Moadl Confirmar Borrar usuario-->
+<div class="ui tiny borrarU modal transition" >
+    <div class="header">
+      Confirmacion.
+    </div>
+    <div class="content">
+      <p>Estas seguro de que quieres borrar el usuario?</p>
+    </div>
+    <div class="actions">
+      <div class="ui negative button">
+        Cancelar
+      </div>
+      <div class="ui positive right labeled icon button">
+        Eliminar
+        <i class="checkmark icon"></i>
+      </div>
+    </div>
+  </div>
+<!---->
+
 <div class="ui segment thirteen wide column ">
     <div>
         
         <h1>    
         <i class="teal large users icon"></i>       
         Usuarios &nbsp; &nbsp; &nbsp;
-            <a href="nuevo_usuario.php">
+            <a  href="nuevo_usuario.php">
          <div class="ui olive animated button" >
              <div class="visible content ">Agregar Usuario</div>
                 <div class="hidden content">
@@ -46,10 +66,11 @@
               echo    '<td>'.$renglon["correo"].'</td>';
               echo    '<td>'.$renglon["tipo"].'</td>';
               echo    '<td class="center aligned"><a class="ui blue button" href="editar_usuario.php?id='.$renglon["id_usuario"].'&nombre='.$renglon["nombre_usuario"].'&correo='.$renglon["correo"].'&tipo='.$renglon["tipo"].'">Editar</a></td>';
-              echo    '<td class="center aligned"><a class="ui red button" href="#">Eliminar</a></td>';
+              echo    '<td class="center aligned"><a onclick="$(\'.ui.borrarU.tiny.modal\').modal(\'show\'); " class="ui red button" href="#">Eliminar</a></td>';
               echo  '</tr>';
             }
           }
+            
         ?>
         </tr>
         </tbody>
