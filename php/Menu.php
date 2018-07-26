@@ -4,11 +4,12 @@
 
 <head>
   <meta charset="utf-8">       
-  <title>test</title>
+  <title>Cachorros LLC</title>
   <meta name="description" content="jaja una pagina">
   <script src="Semantic-UI-CSS-master/jquery.min.js"></script>
   <link rel="stylesheet"typw="text/css" href="Semantic-UI-CSS-master/semantic.css">
   <script src = "Semantic-UI-CSS-master/semantic.js">
+  <script src="../js/main.js"></script>
   </script>
 </head>
 <body>
