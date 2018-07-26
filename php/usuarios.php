@@ -2,7 +2,7 @@
     include("Menu.php");
 ?>
 
-<!--Moadl Confirmar Borrar usuario-->
+<!--Modal Confirmar Borrar usuario-->
 <div class="ui tiny borrarU modal transition" >
     <div class="header">
       Confirmacion.

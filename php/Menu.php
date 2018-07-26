@@ -1,5 +1,9 @@
 <?php
 session_start();
+if (!isset($_SESSION['loggedin']) ) {
+  header ("Location: ../index.php");
+  exit;
+}
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -31,7 +35,7 @@ session_start();
         Usuarios
       </a>
       <div class="right menu">
-        <a href="../index.php" class="ui item">
+        <a href="../index.php?out" class="ui item">
           Cerrar sesion
         </a>
       </div>

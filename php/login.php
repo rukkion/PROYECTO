@@ -1,5 +1,10 @@
 <?php
 session_start();
+if (isset($_GET['out']))
+{
+  $_SESSION=array();
+  session_destroy();
+}
 ?>
 <!DOCTYPE html>
 <html>

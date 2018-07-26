@@ -1,6 +1,23 @@
 <?php
     include("Menu.php");
 ?>
+<!--Modal Confirmar Borrar usuario-->
+<div class="ui tiny borrarU modal transition" >
+    <div class="header">
+      Usuario creado con éxito.
+    </div>
+    <div class="content">
+      <p>Usuario creado con éxito</p>
+    </div>
+    <div class="actions">
+      
+      <div class="ui positive right labeled icon button">
+        Aceptar
+        <i class="checkmark icon"></i>
+      </div>
+    </div>
+  </div>
+<!---->
 <div class="ui segment twelve wide column ">
     <div>
         <h1>
@@ -11,7 +28,7 @@
 
 
 <hr>
-<form class="ui fluid form" action="post" autocomplete="off">
+<form class="ui fluid form" method="get" action="" autocomplete="off">
     <div class="ui two column grid">
         <div class="four wide column">
             <div class="ui center aligned segment">
@@ -54,9 +71,9 @@
                   <button class="ui button" type="reset">
                     Cancelar
                   </button>
-                  <button class="ui primary button" type="submit">
+                  <a class="ui primary button" onclick="$('.ui.borrarU.tiny.modal').modal('show');">
                     Crear nuevo usuario
-                  </button>
+                  </a>
             </div>
         </div>
     </div>
