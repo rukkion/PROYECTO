@@ -1,5 +1,6 @@
 <?php
     include("Menu.php");
+    include("Modal.php");
 ?>
 
 
@@ -29,7 +30,7 @@
     <th class="six wide">Articulo</th>
     <th class="two wide">Cantidad</th>
     <th class="  two wide">Movimiento</th>
-    <th class="three wide">Precio</th>
+    <th class="three wide">Total</th>
     
   </tr></thead>
   <tbody>
@@ -143,28 +144,20 @@
   <tfoot>
     <tr>
         <th colspan="5">
-           <div class="ui teal animated button" >
+           <div onclick="$('.ui.historial.small.modal').modal('show');" class="ui teal animated button" >
                 <div class="visible content">Mostrar Detalles</div>
                 <div class="hidden content">
                 <i class="file alternate outline icon"></i>
           </div>
             </div>
                     
-            <div class="ui olive animated button" >
-                <div class="visible content">Agregar venta</div>
+            <div onclick="$('.ui.registrarM.tiny.modal').modal('show');" class="ui olive animated button" >
+                <div class="visible content">Registrar Movimiento</div>
                 <div class="hidden content">
                 <i class="cart arrow down icon"></i>
           </div>
             </div>
             
-            
-            <div class="ui yellow animated button" >
-                <div class="visible content">Agregar compra</div>
-                <div class="hidden content">
-                <i class="cart plus icon"></i>
-          </div>
-            </div>
-
           <div class="ui  right floated pagination menu">
             <a class="icon  item">
               <i class="teal angle double left chevron icon"></i>

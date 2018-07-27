@@ -1,26 +1,9 @@
 <?php
     include("Menu.php");
+    include("Modal.php");
 ?>
 
-<!--Modal Confirmar Borrar usuario-->
-<div class="ui tiny borrarU modal transition" >
-    <div class="header">
-      Confirmacion.
-    </div>
-    <div class="content">
-      <p>Estas seguro de que quieres borrar el usuario?</p>
-    </div>
-    <div class="actions">
-      <div class="ui negative button">
-        Cancelar
-      </div>
-      <div class="ui positive right labeled icon button">
-        Eliminar
-        <i class="checkmark icon"></i>
-      </div>
-    </div>
-  </div>
-<!---->
+
 
 <div class="ui segment thirteen wide column ">
     <div>

@@ -64,8 +64,7 @@ if (!isset($_SESSION['loggedin']) ) {
   <div class="item">
     <div class="header">Historial</div>
     <div class="menu">
-      <a class="item">Agregar compra</a>
-      <a class="item">Agregar venta</a>
+      <a class="item">Registrar Movimiento</a>
     </div>
   </div>
   <div class="item">
