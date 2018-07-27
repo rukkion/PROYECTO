@@ -88,51 +88,69 @@
 
 <!--Modal Detalles Historial-->
 <div class="ui  historial small modal">
-  <i class="close icon"></i>
-  <div class="header">
-    Detalles del Movimento:
-  </div>
-    
-<div id="historial" class="image content">
-    <div class="ui medium image">
-      <img onerror="this.src='../img/desconocido.png';" src="/images/avatar/large/chris.jpg">
-    </div>
-      
-<div style="padding:0px 0px 0px 3em;" class="ui unstackable items">
-  <div class="item">
-    <div class="content">
-      <a class="ui tiny header">ID Pieza: <?php $modal_historial_id_pieza; ?></a>
-    </div>
-  </div>
-    
-  <div class="item">
-    <div class="content">
-      <a class="ui tiny header">Fecha:</a><br>
-    </div>
-  </div>
-    
-<div class="item">
-    <div class="content">
-      <a class="ui tiny header">Tipo de Movimiento:</a>
-    </div>
-  </div>
-    
-    <div class="item">
-    <div class="content">
-      <a class="ui tiny header">Precio compra:</a>
-    </div>
-  </div>
-    
+          <i class="close icon"></i>
+        <?php 
+        if(isset($_GET["id"])){
+            
+          $sql="select * from historial where id_movimiento =".$_GET["id"]."";
+          mysqli_set_charset($conexion,"utf8");
+          $resultado=mysqli_query($conexion,$sql);
+          if(!$resultado){
+            echo mysqli_error($conexion);
+          }
+          if(mysqli_num_rows($resultado)>0){
+            $renglon=mysqli_fetch_assoc($resultado);
+        echo '
+          <div class="header">
+            Detalles de Movimento: '.$renglon["id_movimiento"].'
+          </div>
 
-</div>
-      
-  </div>
-  <div class="actions">
-    <div class="ui black deny button">
-      Regresar
-    </div>
-  </div>
-</div>
+        <div id="historial" class="image content">
+            <div class="ui medium image">
+              <img onerror="this.src=\'../img/desconocido.png\';" src="/images/avatar/large/chris.jpg">
+            </div>
+
+        <div style="padding:0px 0px 0px 3em;" class="ui unstackable items">
+          <div class="item">
+            <div class="content">
+              <a class="ui tiny header">ID Pieza:'.$renglon["id_pieza"].' <?php $modal_historial_id_pieza; ?></a>
+            </div>
+          </div>
+          <div class="item">
+            <div class="content">
+              <a class="ui tiny header">Cantidad:'.$renglon["cantidad"].'</a><br>
+            </div>
+          </div>
+          <div class="item">
+            <div class="content">
+              <a class="ui tiny header">Fecha:'.$renglon["fecha_movimiento"].'</a><br>
+            </div>
+          </div>
+
+        <div class="item">
+            <div class="content">
+              <a class="ui tiny header">Tipo de Movimiento:'.$renglon["tipo_movimiento"].'</a>
+            </div>
+          </div>
+
+            <div class="item">
+            <div class="content">
+              <a class="ui tiny header">Precio compra:'.$renglon["precio_compra"].'</a>
+            </div>
+          </div>
+
+
+        </div>
+
+          </div>
+          <div class="actions">
+            <div class="ui black deny button">
+              Regresar
+            </div>
+          </div>
+        ';}
+}
+?></div>
 <!--Modal Detalles Historial-->
 
 

@@ -1,19 +1,20 @@
 <?php
     include("Menu.php");
-    include("Modal.php");
+     $i=0;
+     $tope = 15;
 ?>
 
 
-<div class="ui segment thirteen wide column ">
+<div class="ui segment  thirteen wide column ">
         <div>
           <h1>
               <i class=" teal large clipboard list icon "></i>
             Historial de articulos 
           </h1>
         </div>
- <div class="ui menu ">
+ <div class="ui segment stackable menu ">
      
-  <div class="ui category search item ">
+  <div class="ui category  mini search item ">
       
     <div class="ui transparent icon input">
       <input class="prompt" type="text" placeholder="Buscar articulos...">
@@ -23,9 +24,11 @@
   </div>
 </div> 
     
-
+<script>
     
- <table name="tablaHistorial" id="tablaHistorial" class="ui sortable selectable teal celled table ">
+</script>
+  <div class="ui segment stackable">  
+ <table name="tablaHistorial" id="tablaHistorial" class="ui small sortable selectable teal celled table ">
   <thead>
     <tr class="">
     <th class="one wide ">ID</th>
@@ -40,15 +43,27 @@
 
         <tbody>
         <?php
-          require('includes/conectar.php');
+           
+        require('includes/conectar.php');
+        include("Modal.php");
           $sql="select id_movimiento,fecha_movimiento, id_pieza, cantidad, tipo_movimiento,precio_compra from historial";
           mysqli_set_charset($conexion,"utf8");
           $resultado=mysqli_query($conexion,$sql);
           if(!$resultado){
             echo mysqli_error($conexion);
           }
-          if(mysqli_num_rows($resultado)>0){
-            while($renglon=mysqli_fetch_assoc($resultado)){
+          if(mysqli_num_rows($resultado)>0 ){
+            mysqli_data_seek($resultado,$i);
+              
+            if(isset($_GET['page'])) {
+                mysqli_data_seek($resultado,($_GET["page"]-1)*5);
+                
+            } else {
+                
+            }
+
+            while( ($renglon=mysqli_fetch_assoc($resultado)) && ($i<$tope)){
+                
                 echo    '<script> $(document).ready(function() {$(\'#t'.$renglon["id_movimiento"].'\').click(function() {document.location.href=("?id='.$renglon["id_movimiento"].'");});});</script>';
                 echo    '<tr id="t'.$renglon["id_movimiento"].'" style="cursor:pointer;"> ';
                 echo    '<td>'.$renglon["id_movimiento"].'</td>';
@@ -58,9 +73,10 @@
                 echo    '<td>'.$renglon["tipo_movimiento"].'</td>';
                 echo    '<td>'.$renglon["precio_compra"].'</td>';
               echo  '</tr>';
+                $i++;
             }
           }
-            
+      
         ?>
         
         </tbody>
@@ -84,27 +100,64 @@
             </div>
             
           <div class="ui  right floated pagination menu">
-            <a class="icon  item">
+              
+           <?php 
+                     if(isset($_GET['page'])&&(($_GET['page']-5)>0)) {
+                        echo '<a class="icon item" href="index.php?page='.($_GET['page']-5).'">';
+                    }else{
+                          echo '<a class="icon item" href="index.php?page=1">';
+                     }
+                 ?>
               <i class="teal angle double left chevron icon"></i>
             </a>
-            <a class="icon item">
+              
+            <?php 
+                     if(isset($_GET['page'])&&(($_GET['page']-1)>0)) {
+                        echo '<a class="icon item" href="index.php?page='.($_GET['page']-1).'">';
+                    }else{
+                          echo '<a class="icon item" href="index.php?page=1">';
+                     }
+                 ?>
               <i class=" teal left chevron icon"></i>
             </a>
+              
              <a class="icon item">
-              <i class="teal circle outline chevron icon"></i>
-            </a>        
-            <a class="icon item">
+                 <?php 
+                     if(isset($_GET['page'])) {
+                        echo $_GET['page'];
+                    }else{ echo 1;
+                           echo '<script>document.location.href=("?page=1");</script>';
+                         }
+                 ?>
+            </a> 
+              
+              <?php 
+                     if(isset($_GET['page'])) {
+                        echo '<a class="icon item" href="index.php?page='.($_GET['page']+1).'">';
+                    }else{
+                          echo '<a class="icon item" href="index.php?page=1">';
+                     }
+                 ?>
+            
               <i class="teal right chevron icon"></i>
             </a>
-            <a class="icon item">
+      
+           <?php 
+                     if(isset($_GET['page'])) {
+                        echo '<a class="icon item" href="index.php?page='.($_GET['page']+5).'">';
+                    }else{
+                          echo '<a class="icon item" href="index.php?page=1">';
+                     }
+                 ?>
               <i class="teal angle double right chevron icon"></i>
             </a>
+            
           </div>
         </th>
   </tr>
 </tfoot>
 </table> 
-    
+    </div>
 </div>
     </div>
         </div>      

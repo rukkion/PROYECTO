@@ -54,10 +54,10 @@ if (!isset($_SESSION['loggedin']) ) {
         
     </div>
         
-    <div class="ui stackable segment">
+    <div class="ui stackable segments">
       
     
-<div class="ui grid">
+<div class="ui segment grid">
     <div class="row">
 <div class="ui main three wide column vertical menu" >
   <div class="item">
