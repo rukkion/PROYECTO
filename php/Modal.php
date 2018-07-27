@@ -86,7 +86,6 @@
 <!--Modal Confirmar Borrar usuario-->
 
 
-
 <!--Modal Detalles Historial-->
 <div class="ui  historial small modal">
   <i class="close icon"></i>
@@ -94,7 +93,7 @@
     Detalles del Movimento:
   </div>
     
-<div  class="image content">
+<div id="historial" class="image content">
     <div class="ui medium image">
       <img onerror="this.src='../img/desconocido.png';" src="/images/avatar/large/chris.jpg">
     </div>
@@ -206,3 +205,54 @@
   </div>
 </div>
 <!--Modal Detalles Historial-->
+
+<!--Modal Detalles Auto-->
+<div class="ui detallesAuto small modal">
+  <i class="close icon"></i>
+  <div class="header">
+    Detalles:
+  </div>
+    
+<div  class="image content">
+    <div class="ui medium image">
+      <img onerror="this.src='../img/desconocido.png';" src="/images/avatar/large/chris.jpg">
+    </div>
+      
+<div style="padding:0px 0px 0px 3em;" class="ui unstackable items">
+  <div class="item">
+    <div class="content">
+        <a class="ui tiny header">Modelo: A23B-8800</a><br>
+        <a class="ui tiny header">ID Modelo: A23B-8800</a><br>
+        <a class="ui tiny header">Fecha:</a>
+    </div>
+  </div>
+    
+  <div class="item">
+    <div class="content">
+      <a class="ui tiny header">Marca: Llantas</a><br>
+        <a class="ui tiny header">ID Marca: BD48</a>
+    </div>
+  </div>
+    
+
+    <div class="item">
+    <div class="content">
+      <a class="ui tiny header">Precio: $100.00</a>
+    </div>
+  </div>
+     
+    <div class="item">
+    <div class="content">
+      <a class="ui tiny header">VIN:000-000-000</a>
+    </div>
+  </div>
+</div>
+      
+  </div>
+  <div class="actions">
+    <div class="ui black deny button">
+      Regresar
+    </div>
+  </div>
+</div>
+<!--Modal Detalles Producto-->

@@ -1,5 +1,6 @@
 <?php
     include("Menu.php");
+    include("Modal.php");
 ?>
 
 <div class="ui segment thirteen wide column ">
@@ -142,7 +143,7 @@
   <tfoot>
     <tr>
         <th colspan="6">
-           <div class="ui teal animated button" >
+           <div onclick="$('.ui.detallesAuto.small.modal').modal('show');" class="ui teal animated button" >
                 <div class="visible content">Mostrar Detalles</div>
                 <div class="hidden content">
                 <i class="file alternate outline icon"></i>

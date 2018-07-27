@@ -22,8 +22,8 @@
     <div class="results"></div>
   </div>
 </div> 
-    
- <table class="ui sortable selectable teal celled table ">
+
+ <table name="tablaHistorial" class="ui sortable selectable teal celled table ">
   <thead>
     <tr class="">
     <th class="three wide ">Fecha</th>
@@ -35,11 +35,11 @@
   </tr></thead>
   <tbody>
     <tr>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
+      <td> 18/11/1996</td>
+      <td> Auto Rojo #45</td>
+      <td> 50pz</td>
+      <td> Entrada</td>
+      <td> $150.00</td>
     </tr>
     <tr>
       <td> </td>
