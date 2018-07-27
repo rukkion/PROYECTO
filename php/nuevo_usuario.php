@@ -1,23 +1,7 @@
 <?php
     include("Menu.php");
 ?>
-<!--Modal Confirmar Borrar usuario-->
-<div class="ui tiny borrarU modal transition" >
-    <div class="header">
-      Usuario creado con éxito.
-    </div>
-    <div class="content">
-      <p>Usuario creado con éxito</p>
-    </div>
-    <div class="actions">
-      
-      <div class="ui positive right labeled icon button">
-        Aceptar
-        <i class="checkmark icon"></i>
-      </div>
-    </div>
-  </div>
-<!---->
+
 <div class="ui segment twelve wide column ">
     <div>
         <h1>
@@ -26,9 +10,9 @@
         </h1>
     </div> 
 
-
 <hr>
-<form class="ui fluid form" method="get" action="" autocomplete="off">
+
+<form class="ui fluid form" method="POST" action="nuevo_usuario-manejo.php" autocomplete="off">
     <div class="ui two column grid">
         <div class="four wide column">
             <div class="ui center aligned segment">
@@ -44,36 +28,36 @@
         <div class="twelve wide column">
             <div class="field">
                 <h3>Nombre usuario </h3>
-                <input type="text" name="usuario" id="usuario" >
+                <input type="text" name="usuario" id="usuario" required>
             </div>
             <div class="field">
                 <h3>Contraseña </h3>
-                <input type="password" name="password" id="password">
+                <input type="password" name="password" id="password" required>
             </div>
             <div class="field">
                 <h3>Confirmar contraseña </h3>
-                <input type="password" name="rpassword" id="rpassword">
+                <input type="password" name="rpassword" id="rpassword" required>
             </div>
             <div class="field">
                 <h3>Tipo de usuario </h3>
-                <select class="ui dropdown">
-                    <option value="">Seleccionar</option>
-                    <option value="1">Usuario</option>
-                    <option value="0">Administrador</option>
+                <select class="ui dropdown" name="tipo">
+                    <option selected value="0">Usuario</option>
+                    <option value="1">Administrador</option>
                 </select>
             </div>
             <div class="field">
                 <h3>Correo electrónico</h3>
-                <input type="email" name="correo" id="correo">
+                <input type="email" name="correo" id="correo" required>
             </div>
             <div class="field ">
                 
                   <button class="ui button" type="reset">
                     Cancelar
                   </button>
-                  <a class="ui primary button" onclick="$('.ui.borrarU.tiny.modal').modal('show');">
+                  <button type="submit" class="ui primary button" name="SUBMIT_USUARIO">
                     Crear nuevo usuario
-                  </a>
+                    </button>
+                  
             </div>
         </div>
     </div>
