@@ -86,6 +86,7 @@ if (!isset($_SESSION['loggedin']) ) {
     
   </div>
       <div class="item">
+      <div class="header"><a href="marcas.php">Marcas</a></div>
       <div class="menu">
       <a class="item">Agregar marca</a>
       <a class="item">Modificar marca</a>

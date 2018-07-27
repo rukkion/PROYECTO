@@ -101,7 +101,7 @@
 <div style="padding:0px 0px 0px 3em;" class="ui unstackable items">
   <div class="item">
     <div class="content">
-      <a class="ui tiny header">ID Pieza: A23B-8800</a>
+      <a class="ui tiny header">ID Pieza: <?php $modal_historial_id_pieza; ?></a>
     </div>
   </div>
     
