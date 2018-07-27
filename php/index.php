@@ -23,19 +23,12 @@
   </div>
 </div> 
     
-<script>
-    $(document).ready(function() {
-        $d=1;
-    $('#tablaHistorial tr').click(function() {
-        document.location.href=("?id="+$d);
-    });
 
-});
-</script>
     
  <table name="tablaHistorial" id="tablaHistorial" class="ui sortable selectable teal celled table ">
   <thead>
     <tr class="">
+    <th class="one wide ">ID</th>
     <th class="three wide ">Fecha</th>
     <th class="six wide">Articulo</th>
     <th class="two wide">Cantidad</th>
@@ -44,21 +37,11 @@
     
   </tr></thead>
 
-  <tbody>
-    
-    <tr  style="cursor:pointer;" id="1" >
-      <a href="Articulos.php"><td name="fecha"> 18/11/1996</td>
-      <td name="articulo"> Auto Rojo #45</td>
-      <td name="cantidad"> 50pz</td>
-      <td name="tipo"> Entrada</td>
-      <td name="total"> $150.00</td></a>
-    </tr>
-      
-  </tbody>
+
         <tbody>
         <?php
           require('includes/conectar.php');
-          $sql="select fecha:movimiento, id_pieza, cantidad, tipo_movimiento,precio_compra from historial";
+          $sql="select id_movimiento,fecha_movimiento, id_pieza, cantidad, tipo_movimiento,precio_compra from historial";
           mysqli_set_charset($conexion,"utf8");
           $resultado=mysqli_query($conexion,$sql);
           if(!$resultado){
@@ -66,12 +49,14 @@
           }
           if(mysqli_num_rows($resultado)>0){
             while($renglon=mysqli_fetch_assoc($resultado)){
-              echo '<tr>';
-              echo    '<td>'.$renglon["nombre_usuario"].'</td>';
-              echo    '<td>'.$renglon["correo"].'</td>';
-              echo    '<td>'.$renglon["tipo"].'</td>';
-              echo    '<td class="center aligned"><a class="ui blue button" href="editar_usuario.php?id='.$renglon["id_usuario"].'&nombre='.$renglon["nombre_usuario"].'&correo='.$renglon["correo"].'&tipo='.$renglon["tipo"].'">Editar</a></td>';
-              echo    '<td class="center aligned"><a onclick="$(\'.ui.borrarU.tiny.modal\').modal(\'show\'); " class="ui red button" href="#">Eliminar</a></td>';
+                echo    '<script> $(document).ready(function() {$(\'#t'.$renglon["id_movimiento"].'\').click(function() {document.location.href=("?id='.$renglon["id_movimiento"].'");});});</script>';
+                echo    '<tr id="t'.$renglon["id_movimiento"].'" style="cursor:pointer;"> ';
+                echo    '<td>'.$renglon["id_movimiento"].'</td>';
+                echo    '<td>'.$renglon["fecha_movimiento"].'</td>';
+                echo    '<td>'.$renglon["id_pieza"].'</td>';
+                echo    '<td>'.$renglon["cantidad"].'</td>';
+                echo    '<td>'.$renglon["tipo_movimiento"].'</td>';
+                echo    '<td>'.$renglon["precio_compra"].'</td>';
               echo  '</tr>';
             }
           }
@@ -83,7 +68,7 @@
      
   <tfoot>
     <tr>
-        <th colspan="5">
+        <th colspan="6">
            <div onclick="$('.ui.historial.small.modal').modal('show');" class="ui teal animated button" >
                 <div class="visible content">Mostrar Detalles</div>
                 <div class="hidden content">
