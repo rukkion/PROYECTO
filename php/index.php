@@ -22,8 +22,18 @@
     <div class="results"></div>
   </div>
 </div> 
+    
+<script>
+    $(document).ready(function() {
+        $d=1;
+    $('#tablaHistorial tr').click(function() {
+        document.location.href=("?id="+$d);
+    });
 
- <table name="tablaHistorial" class="ui sortable selectable teal celled table ">
+});
+</script>
+    
+ <table name="tablaHistorial" id="tablaHistorial" class="ui sortable selectable teal celled table ">
   <thead>
     <tr class="">
     <th class="three wide ">Fecha</th>
@@ -33,113 +43,43 @@
     <th class="three wide">Total</th>
     
   </tr></thead>
+
   <tbody>
-    <tr>
-      <td> 18/11/1996</td>
-      <td> Auto Rojo #45</td>
-      <td> 50pz</td>
-      <td> Entrada</td>
-      <td> $150.00</td>
+    
+    <tr  style="cursor:pointer;" id="1" >
+      <a href="Articulos.php"><td name="fecha"> 18/11/1996</td>
+      <td name="articulo"> Auto Rojo #45</td>
+      <td name="cantidad"> 50pz</td>
+      <td name="tipo"> Entrada</td>
+      <td name="total"> $150.00</td></a>
     </tr>
-    <tr>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr> 
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr> 
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-    </tr>
+      
   </tbody>
+        <tbody>
+        <?php
+          require('includes/conectar.php');
+          $sql="select fecha:movimiento, id_pieza, cantidad, tipo_movimiento,precio_compra from historial";
+          mysqli_set_charset($conexion,"utf8");
+          $resultado=mysqli_query($conexion,$sql);
+          if(!$resultado){
+            echo mysqli_error($conexion);
+          }
+          if(mysqli_num_rows($resultado)>0){
+            while($renglon=mysqli_fetch_assoc($resultado)){
+              echo '<tr>';
+              echo    '<td>'.$renglon["nombre_usuario"].'</td>';
+              echo    '<td>'.$renglon["correo"].'</td>';
+              echo    '<td>'.$renglon["tipo"].'</td>';
+              echo    '<td class="center aligned"><a class="ui blue button" href="editar_usuario.php?id='.$renglon["id_usuario"].'&nombre='.$renglon["nombre_usuario"].'&correo='.$renglon["correo"].'&tipo='.$renglon["tipo"].'">Editar</a></td>';
+              echo    '<td class="center aligned"><a onclick="$(\'.ui.borrarU.tiny.modal\').modal(\'show\'); " class="ui red button" href="#">Eliminar</a></td>';
+              echo  '</tr>';
+            }
+          }
+            
+        ?>
+        
+        </tbody>
+    
      
   <tfoot>
     <tr>
@@ -179,6 +119,7 @@
   </tr>
 </tfoot>
 </table> 
+    
 </div>
     </div>
         </div>      
