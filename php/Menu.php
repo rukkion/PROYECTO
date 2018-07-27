@@ -76,11 +76,11 @@ if (!isset($_SESSION['loggedin']) ) {
     </div>
   </div>
   <div class="item">
-    <div class="header">Autos</div>
+    <div class="header"><a href="modelos.php">Modelos</a></div>
     <div class="menu">
-      <a class="item">Agregar modelo</a>
-      <a class="item">Modificar modelo</a>
-      <a class="item">Eliminar modelo</a>
+      <a class="item" href="nuevo_modelo.php">Agregar modelo</a>
+      <a class="item" href="modelos.php">Modificar modelo</a>
+      <a class="item" href="modelos.php">Eliminar modelo</a>
       
     </div>
     
@@ -88,9 +88,9 @@ if (!isset($_SESSION['loggedin']) ) {
       <div class="item">
       <div class="header"><a href="marcas.php">Marcas</a></div>
       <div class="menu">
-      <a class="item">Agregar marca</a>
-      <a class="item">Modificar marca</a>
-      <a class="item">Eliminar marca</a>
+      <a href="nueva_marca.php" class="item">Agregar marca</a>
+      <a class="item" href="marcas.php">Modificar marca</a>
+      <a class="item" href="marcas.php">Eliminar marca</a>
     </div>
       </div>
   <div class="item">
