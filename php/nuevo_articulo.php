@@ -11,7 +11,7 @@
 
 
 <hr>
-<form class="ui fluid form" action="post" autocomplete="off">
+<form class="ui fluid form" method="post" action="nuevo_articulo-manejo.php" autocomplete="off">
     <div class="ui two column grid">
         <div class="four wide column">
             <div class="ui center aligned segment">
@@ -32,13 +32,13 @@
                 </div>
                  <div class="field">
                 <label>Descripcion</label>
-                <textarea></textarea>
+                <textarea name="descripcion"></textarea>
                 </div>
                 <div class="field ">
                     <label>Precio de venta</label>
                     <div class="ui right labeled input">
                       <label for="amount" class="ui label">$</label>
-                      <input type="text" placeholder="Precio" id="precio">
+                      <input type="text" placeholder="Precio" name="precio" id="precio">
                       <div class="ui basic label">.00</div>
                     </div>
                 </div>
@@ -46,14 +46,14 @@
                 <div class="field">
                     <label>Cantidad</label>
                     <div class="ui right labeled input">
-                      <input type="text" placeholder="0" id="cantidad">
+                      <input type="text" placeholder="0" name="cantidad" id="cantidad">
                       <div class="ui label">Pz</div>
                     </div>
                 </div>
                
                 <div class="field">
                     <Label>Estado</Label>
-                    <select class="ui dropdown">
+                    <select class="ui dropdown" name="estado">
                         <option value="">Nuevo</option>
                         <option value="1">Usado</option>
                         <option value="0">Otro</option>

@@ -62,24 +62,23 @@ if (!isset($_SESSION['loggedin']) ) {
 <div class="ui main three wide column vertical menu" >
   <div class="item">
   <div class="item">
-    <div class="header">Historial</div>
+    <div class="header"><a href="index.php">Historial</a></div>
     <div class="menu">
-      <a class="item">Registrar Movimiento</a>
+      <a class="item" href="registrar_movimiento.php">Registrar Movimiento</a>
     </div>
   </div>
   <div class="item">
-    <div class="header">Piezas</div>
+    <div class="header"><a href="Articulos.php">Articulos</a></div>
     <div class="menu">
-      <a class="item">Agregar pieza</a>
-      <a class="item">Modificar pieza</a>
-      <a class="item">Eliminar pieza</a>
+      <a class="item" href="nuevo_articulo.php">Agregar articulo
+      <a class="item" href="Articulos.php">Modificar articulo</a>
+      <a class="item" href="Articulos.php">Eliminar articulo</a>
     </div>
   </div>
   <div class="item">
     <div class="header"><a href="modelos.php">Modelos</a></div>
     <div class="menu">
       <a class="item" href="nuevo_modelo.php">Agregar modelo</a>
-      <a class="item" href="modelos.php">Modificar modelo</a>
       <a class="item" href="modelos.php">Eliminar modelo</a>
       
     </div>
@@ -89,15 +88,14 @@ if (!isset($_SESSION['loggedin']) ) {
       <div class="header"><a href="marcas.php">Marcas</a></div>
       <div class="menu">
       <a href="nueva_marca.php" class="item">Agregar marca</a>
-      <a class="item" href="marcas.php">Modificar marca</a>
       <a class="item" href="marcas.php">Eliminar marca</a>
     </div>
       </div>
   <div class="item">
     <div class="header">Soporte</div>
     <div class="menu">
-      <a class="item">Soporte de correo</a>
-      <a class="item">Manual</a>
+      <a class="item" href="contacto.php">Soporte de correo</a>
+      <a class="item" href="../src/manual.pdf" download>Manual</a>
     </div>
   </div>
 </div> 

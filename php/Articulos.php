@@ -1,6 +1,6 @@
 <?php
     include("Menu.php");
-    include("Modal.php");
+    
 ?>
 
 
@@ -23,7 +23,7 @@
   </div>
 </div> 
     
- <table class="ui sortable selectable teal celled table ">
+ <table class="ui sortable selectable teal celled table "> 
   <thead>
     <tr>
     <th >Nombre</th>
@@ -36,113 +36,35 @@
     
   </tr></thead>
   <tbody>
-    <tr onclick="active()">
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td><td> </td>
-        <td> </td>
-    </tr>
-    <tr>
-      <td> </td><td> </td>
-      <td> </td><td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td> </td><td> </td>
-      <td> </td><td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td> </td><td> </td>
-      <td> </td><td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td> </td><td> </td>
-      <td> </td><td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td> </td><td> </td>
-      <td> </td><td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td> </td><td> </td>
-      <td> </td><td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td> </td><td> </td>
-      <td> </td><td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr> 
-      <td> </td><td> </td>
-      <td> </td><td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr> 
-      <td> </td><td> </td>
-      <td> </td><td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td> </td><td> </td>
-      <td> </td><td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td> </td><td> </td>
-      <td> </td>
-      <td> </td><td> </td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td> </td><td> </td>
-      <td> </td>
-      <td> </td><td> </td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td> </td><td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td><td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td> </td><td> </td>
-      <td> </td>
-      <td> </td><td> </td>
-      <td> </td>
-      <td> </td>
-    </tr>
-      
+  <?php
+           
+           require('includes/conectar.php');
+           include("Modal.php");
+             $sql="select id_pieza,id_categoria, nombre_pieza, cantidad, observacion,precio_venta, estado from pieza";
+             mysqli_set_charset($conexion,"utf8");
+             $resultado=mysqli_query($conexion,$sql);
+             if(!$resultado){
+               echo mysqli_error($conexion);
+             }
+             if(mysqli_num_rows($resultado)>0 ){
+   
+               while( $renglon=mysqli_fetch_assoc($resultado)){
+                   
+                   echo    '<script> $(document).ready(function() {$(\'#t'.$renglon["id_pieza"].'\').click(function() {document.location.href=("?id='.$renglon["id_pieza"].'");});});</script>';
+                   echo    '<tr id="t'.$renglon["id_pieza"].'" style="cursor:pointer;"> ';
+                   echo    '<td>'.$renglon["nombre_pieza"].'</td>';
+                   echo    '<td>'.$renglon["id_pieza"].'</td>';
+                   echo    '<td>'.$renglon["observacion"].'</td>';
+                   echo    '<td>'.$renglon["id_categoria"].'</td>';
+                   echo    '<td>'.$renglon["cantidad"].'</td>';
+                   echo    '<td>'.$renglon["estado"].'</td>';
+                   echo    '<td>'.$renglon["precio_venta"].'</td>';
+                 echo  '</tr>';
+                  
+               }
+             }
+         
+           ?>  
   </tbody>
      
   <tfoot>
@@ -201,6 +123,7 @@
   </tr>
 </tfoot>
 </table> 
+
 </div>
     </div>
         </div>      

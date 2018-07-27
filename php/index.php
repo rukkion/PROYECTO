@@ -126,7 +126,7 @@
                      if(isset($_GET['page'])) {
                         echo $_GET['page'];
                     }else{ echo 1;
-                           echo '<script>document.location.href=("?page=1");</script>';
+                           //echo '<script>document.location.href=("?page=1");</script>';
                          }
                  ?>
             </a> 

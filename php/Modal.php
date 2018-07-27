@@ -8,7 +8,7 @@
     
 <div  class="image content">
     <div class="ui medium image">
-      <img onerror="this.src='../img/desconocido.png';" src="/images/avatar/large/chris.jpg">
+      <img onerror="this.src='../img/desconocido.png';" src="">
     </div>
       
 <div style="padding:0px 0px 0px 3em;" class="ui unstackable items">
@@ -107,7 +107,7 @@
 
         <div id="historial" class="image content">
             <div class="ui medium image">
-              <img onerror="this.src=\'../img/desconocido.png\';" src="/images/avatar/large/chris.jpg">
+              <img onerror="this.src=\'../img/desconocido.png\';" src="">
             </div>
 
         <div style="padding:0px 0px 0px 3em;" class="ui unstackable items">
@@ -233,7 +233,7 @@
     
 <div  class="image content">
     <div class="ui medium image">
-      <img onerror="this.src='../img/desconocido.png';" src="/images/avatar/large/chris.jpg">
+      <img onerror="this.src='../img/desconocido.png';" src="">
     </div>
       
 <div style="padding:0px 0px 0px 3em;" class="ui unstackable items">
