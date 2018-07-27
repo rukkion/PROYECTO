@@ -43,12 +43,12 @@
             while($renglon=mysqli_fetch_assoc($resultado)){
               echo '<tr>';
               echo    '<td class="center aligned">'.$renglon["nombre_marca"].'</td>';
-              echo    '<td class="center aligned"><a class="ui blue button" href="editar_marca.php?id='.$renglon["id_marca"].'&nombre='.$renglon["nombre_marca"].'">Editar</a></td>';
+              //echo    '<td class="center aligned"><a class="ui blue button" href="editar_marca.php?id='.$renglon["id_marca"].'&nombre='.$renglon["nombre_marca"].'">Editar</a></td>';
               echo    '<td class="center aligned"><a onclick="$(\'.ui.borrarU.tiny.modal\').modal(\'show\'); " class="ui red button" href="borrar_marca.php?id='.$renglon['id_marca'].'">Eliminar</a></td>';
               echo  '</tr>';
             }
           }
-            
+          mysqli_close($conexion);
         ?>
         </tr>
         </tbody>
